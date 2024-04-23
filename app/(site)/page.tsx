@@ -1,3 +1,4 @@
+import Form from "@/components/Form";
 import { getPosts } from "@/sanity/sanity.query";
 import { Post } from "@/types";
 import { PortableText } from "@portabletext/react";
@@ -21,6 +22,10 @@ export default async function Home() {
           </article>
         )
       })}
+
+      <h2 className="text-3xl mt-10">Add category</h2>
+
+      <Form />
     </main>
   );
 }

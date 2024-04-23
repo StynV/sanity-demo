@@ -58,3 +58,14 @@ export async function getSinglePost(slug: string) {
     { slug }
   );
 }
+
+export async function createCategory(title: string, description: string) {
+  const result = client.create({
+    _type: 'Category',
+    title: title,
+    description: description,
+  })
+
+  console.log(result)
+  return result
+}

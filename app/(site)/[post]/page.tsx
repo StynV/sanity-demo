@@ -20,13 +20,15 @@ export default async function PostDetail({ params }: Props) {
             <article key={post._id}>
                 <h1 className="text-4xl">{post.title}</h1>
 
-                <Image
-                    alt={mainImage.alt ?? ''}
-                    src={mainImage.image}
-                    width={100}
-                    height={100}
-                    className="w-full h-full"
-                />
+                {mainImage &&
+                    <Image
+                        alt={mainImage.alt ?? ''}
+                        src={mainImage.image}
+                        width={100}
+                        height={100}
+                        className="w-full h-full"
+                    />
+                }
 
                 <PortableText value={post.author.bio} />
             </article>
