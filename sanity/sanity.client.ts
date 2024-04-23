@@ -5,7 +5,7 @@ const config: ClientConfig = {
     dataset: "production",
     apiVersion: "2022-03-07",
     useCdn: false,
-    token: 'skPxAR8cbI9u6k44OEzvm63BpxPHNkUMCj8fQ4FKWSjZrlUGdOYrUBC4vyvAxFRk6OzzwPch30rbavagCpRStA4CSiKyxP6RGUY3SM6r56gPykdbay50ah8A7RNQWDHGE3WbnZtqjfdN39RYPaRds3AVOi8wWn1gDTP6zwBBm2ZITB7lYNng'
+    token: 'skswi4a3EZY9mqqQUAy5uEyP6mwtftd4SepteZ8Yww3kp14zY9GnC1UTQv5G31vgy3rW3CfziME6enEBkPYqC4zrm47VXI4aHZSHNd7R46H4chtdP7ghZNPIFTotFCPywZNaEwt9uz0VDT64mSKo9AMyHquas4RdKxfVIWxXZFKmaUIAwIWG'
 };
 
 const client = createClient(config);

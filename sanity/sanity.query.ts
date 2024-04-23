@@ -61,7 +61,7 @@ export async function getSinglePost(slug: string) {
 
 export async function createCategory(title: string, description: string) {
   const result = client.create({
-    _type: 'Category',
+    _type: 'category',
     title: title,
     description: description,
   })
