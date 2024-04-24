@@ -8,7 +8,7 @@ export default defineType({
     defineField({
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'internationalizedArrayString',
       validation: (rule) => rule.required()
     }),
     defineField({

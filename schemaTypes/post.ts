@@ -9,7 +9,7 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'internationalizedArrayString',
     }),
     defineField({
       name: 'slug',
@@ -71,8 +71,10 @@ export default defineType({
       media: 'mainImage',
     },
     prepare(selection) {
-      const { author } = selection
-      return { ...selection, subtitle: author && `by ${author}` }
+      const { title, author } = selection
+      const englishTitle = title.find((translation: any) => translation._key === 'en').value
+      const englishAuthor = author.find((translation: any) => translation._key === 'en').value
+      return { ...selection, title: englishTitle, subtitle: englishAuthor && `by ${englishAuthor}` }
     },
   },
 })
