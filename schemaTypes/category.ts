@@ -17,4 +17,15 @@ export default defineType({
       type: 'text',
     }),
   ],
+
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare(selection) {
+      const { title } = selection
+      const englishTitle = title.find((translation: any) => translation._key === 'en').value
+      return { ...selection, title: englishTitle }
+    },
+  },
 })
