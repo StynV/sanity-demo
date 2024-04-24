@@ -12,7 +12,7 @@ export default async function Home() {
       {posts.map(post => {
         return (
           <article key={post._id}>
-            <Link href={post.slug.current}>
+            <Link href={`posts/${post.slug.current}`}>
               <h1 className="text-4xl">{post.title}</h1>
             </Link>
 
