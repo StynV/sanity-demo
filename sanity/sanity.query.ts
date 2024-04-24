@@ -54,6 +54,16 @@ export async function getSinglePost(slug: string) {
       categories[]->,
       publishedAt,
       body,
+      seo
+    }`,
+    { slug }
+  );
+}
+
+export async function getSinglePostSEO(slug: string) {
+  return client.fetch(
+    groq`*[_type == "post" && slug.current == $slug][0]{
+      seo
     }`,
     { slug }
   );

@@ -10,8 +10,6 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24 bg-white text-black">
       {posts.map(post => {
-        const { mainImage } = post
-
         return (
           <article key={post._id}>
             <Link href={post.slug.current}>

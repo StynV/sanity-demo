@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity'
+import seo from './seo'
 
 export default defineType({
   name: 'post',
@@ -56,6 +57,11 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+    })
   ],
 
   preview: {

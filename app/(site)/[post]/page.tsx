@@ -1,13 +1,24 @@
-import { getSinglePost } from "@/sanity/sanity.query";
+import { getSinglePost, getSinglePostSEO } from "@/sanity/sanity.query";
 import { Post } from "@/types";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
 
 type Props = {
     params: {
         post: string;
     };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const slug = params.post;
+    const post: Post = await getSinglePostSEO(slug);
+
+    return {
+        title: post.seo.title,
+        description: post.seo.paragraph,
+    }
+}
 
 export default async function PostDetail({ params }: Props) {
     const slug = params.post;

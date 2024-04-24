@@ -31,6 +31,11 @@ export type Category = {
     description: string
 }
 
+export type SEO = {
+    title: string,
+    paragraph: string
+}
+
 export type Post = {
     _id: string,
     _type: string,
@@ -40,5 +45,6 @@ export type Post = {
     author: Author,
     categories: Category[],
     publishedAt: string,
-    body: string
+    body: string,
+    seo: SEO
 }
