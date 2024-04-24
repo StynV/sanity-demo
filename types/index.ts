@@ -10,12 +10,18 @@ export type Image = {
     image: string
 }
 
+export type TranslationString = {
+    _type: string,
+    _key: string,
+    value: string
+}
+
 export type Author = {
     _id: string,
     _type: string,
     _createdAt: string,
     _updatedAt: string,
-    name: string,
+    name: TranslationString[],
     bio: PortableTextBlock[],
     slug: Slug,
     image: Image
@@ -27,7 +33,7 @@ export type Category = {
     _type: string,
     _createdAt: string,
     _updatedAt: string,
-    title: string,
+    title: TranslationString[],
     description: string
 }
 
@@ -39,7 +45,7 @@ export type SEO = {
 export type Post = {
     _id: string,
     _type: string,
-    title: string,
+    title: TranslationString[],
     slug: Slug,
     mainImage: Image,
     author: Author,

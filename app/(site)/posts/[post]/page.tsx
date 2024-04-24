@@ -29,7 +29,7 @@ export default async function PostDetail({ params }: Props) {
         return (
             <main className="flex min-h-screen flex-col items-center p-24 bg-white text-black">
                 <article key={post._id}>
-                    <h1 className="text-4xl">{post.title}</h1>
+                    <h1 className="text-4xl">{post.title[0].value}</h1>
 
                     {mainImage &&
                         <Image
