@@ -13,7 +13,7 @@ export default async function Home() {
         return (
           <article key={post._id}>
             <Link href={`posts/${post.slug.current}`}>
-              <h1 className="text-4xl">{post.title}</h1>
+              <h1 className="text-4xl">{post.title[0].value}</h1>
             </Link>
 
             <PortableText value={post.author.bio} />
