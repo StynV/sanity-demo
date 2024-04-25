@@ -10,6 +10,11 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'internationalizedArrayString',
+      options: {
+        aiAssist: {
+          translateAction: true
+        }
+      },
     }),
     defineField({
       name: 'slug',
@@ -32,6 +37,9 @@ export default defineType({
       type: 'image',
       options: {
         hotspot: true,
+        aiAssist: {
+          imageDescriptionField: 'alt',
+        },
       },
       fields: [
         {
@@ -39,7 +47,25 @@ export default defineType({
           title: 'Alt',
           type: 'string'
         }
-      ]
+      ],
+    }),
+    defineField({
+      name: 'aiImage',
+      title: 'AI image',
+      type: 'image',
+      options: {
+        hotspot: true,
+        aiAssist: {
+          imageInstructionField: 'promptForImage',
+        },
+      },
+      fields: [
+        {
+          name: 'promptForImage',
+          title: 'Image prompt',
+          type: 'string',
+        }
+      ],
     }),
     defineField({
       name: 'categories',
