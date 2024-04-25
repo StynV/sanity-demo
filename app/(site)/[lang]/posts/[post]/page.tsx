@@ -7,6 +7,7 @@ import { Metadata } from "next";
 type Props = {
     params: {
         post: string;
+        lang: string
     };
 };
 
@@ -22,14 +23,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PostDetail({ params }: Props) {
     const slug = params.post;
-    const post: Post = await getSinglePost(slug);
+    const { lang } = params
+    const post: Post = await getSinglePost(slug, lang);
+
     if (post) {
         const { mainImage } = post
+
+
+        const authorName = post.author.name.find(value => value._key === lang)?.value
 
         return (
             <main className="flex min-h-screen flex-col items-center p-24 bg-white text-black">
                 <article key={post._id}>
-                    <h1 className="text-4xl">{post.title[0].value}</h1>
+                    <h1 className="text-4xl">{post.title}</h1>
 
                     {mainImage &&
                         <Image
@@ -41,7 +47,7 @@ export default async function PostDetail({ params }: Props) {
                         />
                     }
 
-                    <PortableText value={post.author.bio} />
+                    {authorName && <p>{authorName}</p>}
                 </article>
             </main>
         );

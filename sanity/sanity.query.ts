@@ -30,12 +30,12 @@ export async function getPosts() {
   );
 }
 
-export async function getSinglePost(slug: string) {
+export async function getSinglePost(slug: string, lang: string) {
   return client.fetch(
     groq`*[_type == "post" && slug.current == $slug][0]{
       _id,
       _type,
-      title,
+      "title": title[_key == "${lang}"][0].value,
       slug,
       mainImage {
         alt, "image": asset->url

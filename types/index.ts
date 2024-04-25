@@ -45,7 +45,7 @@ export type SEO = {
 export type Post = {
     _id: string,
     _type: string,
-    title: TranslationString[],
+    title: string,
     slug: Slug,
     mainImage: Image,
     author: Author,
