@@ -33,9 +33,9 @@ export default async function PostDetail({ params }: Props) {
         const authorName = post.author.name.find(value => value._key === lang)?.value
 
         return (
-            <main className="flex min-h-screen flex-col items-center p-24 bg-white text-black">
-                <article key={post._id}>
-                    <h1 className="text-4xl">{post.title}</h1>
+            <main className="flex min-h-screen flex-col items-start p-24 bg-blue-100 text-black">
+                <article key={post._id} className="bg-white w-full p-10">
+                    <h1 className="text-4xl mb-4">{post.title}</h1>
 
                     {mainImage &&
                         <Image
@@ -43,7 +43,7 @@ export default async function PostDetail({ params }: Props) {
                             src={mainImage.image}
                             width={100}
                             height={100}
-                            className="w-full h-full"
+                            className="mb-4"
                         />
                     }
 

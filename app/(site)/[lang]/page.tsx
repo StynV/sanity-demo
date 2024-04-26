@@ -8,13 +8,9 @@ export default async function Home({ params }: { params: { lang: string } }) {
   const { lang } = params
   const posts: Post[] = await getPosts(lang);
 
-  console.log(posts)
-
   return (
     <main className="flex flex-col items-start p-24 bg-blue-100 text-black gap-10">
       {posts.map(post => {
-        console.log(post.title)
-
         return (
           <article key={post._id} className="bg-white w-full rounded-md p-10">
             <Link href={`${lang}/posts/${post.slug.current}`}>
@@ -26,7 +22,7 @@ export default async function Home({ params }: { params: { lang: string } }) {
         )
       })}
 
-      <div>
+      <div className="mb-10">
         <h2 className="text-3xl mt-10 mb-4">Add category</h2>
 
         <Form />

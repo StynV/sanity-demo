@@ -3,7 +3,7 @@ import client from "./sanity.client";
 
 export async function getPosts(lang: string) {
   return client.fetch(
-    groq`*[_type == "post"]{
+    groq`*[_type == "post" && !(_id match "drafts.*")]{
       _id,
       _type,
       "title": title[_key == "${lang}"][0].value,
