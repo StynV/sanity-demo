@@ -22,7 +22,7 @@ export default async function Home({ params }: { params: { lang: string } }) {
         )
       })}
 
-      <div className="mb-10">
+      <div className="mb-10 self-center">
         <h2 className="text-3xl mt-10 mb-4">Add category</h2>
 
         <Form />
