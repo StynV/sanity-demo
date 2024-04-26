@@ -8,15 +8,17 @@ export default async function Home({ params }: { params: { lang: string } }) {
   const { lang } = params
   const posts: Post[] = await getPosts(lang);
 
+  console.log(posts)
+
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 bg-white text-black">
+    <main className="flex flex-col items-start p-24 bg-blue-100 text-black gap-10">
       {posts.map(post => {
         console.log(post.title)
 
         return (
-          <article key={post._id}>
+          <article key={post._id} className="bg-white w-full rounded-md p-10">
             <Link href={`${lang}/posts/${post.slug.current}`}>
-              <h1 className="text-4xl">{post.title}</h1>
+              <h1 className="text-4xl mb-4">{post.title}</h1>
             </Link>
 
             <PortableText value={post.author.bio} />
@@ -24,9 +26,11 @@ export default async function Home({ params }: { params: { lang: string } }) {
         )
       })}
 
-      <h2 className="text-3xl mt-10">Add category</h2>
+      <div>
+        <h2 className="text-3xl mt-10 mb-4">Add category</h2>
 
-      <Form />
+        <Form />
+      </div>
     </main>
   );
 }

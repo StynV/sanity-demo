@@ -18,13 +18,24 @@ const Form = () => {
         <form onSubmit={submitForm} className="flex flex-col">
 
             <label>title</label>
-            <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} className="border border-black"></input>
+            <input
+                type="text"
+                name="title"
+                value={title}
+                onChange={e => setTitle(e.target.value)}
+                className="border border-black p-1"
+            />
 
             <label>description</label>
-            <input type="text" name="description" value={description} onChange={e => setDescription(e.target.value)} className="border border-black"></input>
+            <input
+                type="text"
+                name="description"
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+                className="border border-black p-1"
+            />
 
-            <button type="submit">Submit</button>
-
+            <button type="submit" className="bg-blue-700 text-white rounded-md mt-4 p-1">Submit</button>
         </form>
     )
 }
