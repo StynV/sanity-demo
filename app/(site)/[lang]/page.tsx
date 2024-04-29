@@ -15,9 +15,9 @@ export default async function Home({ params }: { params: { lang: string } }) {
           <article key={post._id} className="bg-white w-full rounded-md p-10">
             <Link href={`${lang}/posts/${post.slug.current}`}>
               <h1 className="text-4xl mb-4">{post.title}</h1>
-            </Link>
 
-            <PortableText value={post.author.bio} />
+              <PortableText value={post.author.bio} />
+            </Link>
           </article>
         )
       })}

@@ -29,7 +29,6 @@ export default async function PostDetail({ params }: Props) {
     if (post) {
         const { mainImage } = post
 
-
         const authorName = post.author.name.find(value => value._key === lang)?.value
 
         return (
