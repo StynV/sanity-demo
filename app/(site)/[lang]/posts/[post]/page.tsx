@@ -43,6 +43,7 @@ export default async function PostDetail({ params }: Props) {
                             width={100}
                             height={100}
                             className="mb-4"
+                            priority
                         />
                     }
 
